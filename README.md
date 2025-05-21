@@ -115,11 +115,15 @@ AI: This assignment is designed to test your ability to build a full-stack app..
 - ✅ Source Code (frontend + server in Next.js)
 - ✅ Supabase SQL schema or table structure
 - ✅ chat-log.txt file in public directory
-- ✅ Hosted Git repo (e.g., GitHub/GitLab)
-- ✅ Optional: Vercel/Netlify link
+- ✅ Hosted Git repo ( GitHub)
 
 ---
 
-## 🤝 License
+## Screenshots
 
-MIT – Feel free to use with attribution.
+### Chat Interface
+![Chat UI Screenshot](./public/ui.png)
+
+
+
+
