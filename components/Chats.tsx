@@ -10,24 +10,24 @@ export type Chat = {
   created_at: string;
 };
 
-const Chats = ({ chats: chat }: { chats: Chat[] }) => {
+const Chats = () => {
   const bottomRef = useRef<HTMLDivElement>(null);
 const { setChats, chats }:any = useAppContext()  
 const [isClient, setIsClient] = useState<boolean>(false);
 
-useEffect(()=>{
-  setIsClient(true);
-  setChats(chat);
-},[])
+// useEffect(()=>{
+//   setIsClient(true);
+//   setChats(chat);
+// },[])
 
 
   useEffect(() => {
-    // setIsClient(true);
+    setIsClient(true);
     if (bottomRef.current) {
       bottomRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [chats]); // scrolls when chats change
-  
+
   if (!isClient) return null; // ✅ avoid hydration mismatch
 
   return (
