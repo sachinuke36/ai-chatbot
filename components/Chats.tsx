@@ -16,16 +16,19 @@ const { setChats, chats }:any = useAppContext()
 const [isClient, setIsClient] = useState<boolean>(false);
 
 useEffect(()=>{
+  setIsClient(true);
   setChats(chat);
 },[])
 
 
   useEffect(() => {
-    setIsClient(true);
+    // setIsClient(true);
     if (bottomRef.current) {
       bottomRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [chats]); // scrolls when chats change
+  
+  if (!isClient) return null; // ✅ avoid hydration mismatch
 
   return (
     <div className="w-full h-[85%] bg-gray-900 p-4 overflow-y-auto space-y-4 text-white">
